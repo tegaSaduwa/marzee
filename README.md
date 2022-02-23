@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `Note - used both class based and function based components to show I have understanding of how each works`
+
 ### `npm install`
 
 Installs all the dependencies necessary for the application to run - you can find them in the package.json file.
