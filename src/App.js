@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BASE_URL } from "./config";
+import axios from "axios";
+import MapComp from "./components/geo/AllUsersLocation";
+import Users from "./components/Users";
+import User from "./components/User";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [state, setState] = useState([]);
+
+  useEffect(() => {
+    const getUsers = async () => {
+      const res = await axios.get(`${BASE_URL}/users`);
+      const users = res.data;
+      setState(users);
+    };
+
+    getUsers();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/user-map" element={<MapComp users={state} />} />
+          <Route path="/" element={<Users users={state} />} />
+          <Route path="user/:id" element={<User />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
