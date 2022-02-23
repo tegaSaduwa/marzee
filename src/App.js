@@ -24,7 +24,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/user-map" element={<MapComp users={state} />} />
+          <Route path="/users-location" element={<MapComp users={state} />} />
           <Route path="/" element={<Users users={state} />} />
           <Route path="user/:id" element={<User />} />
         </Routes>

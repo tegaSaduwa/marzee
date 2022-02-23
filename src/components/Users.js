@@ -7,7 +7,7 @@ const Users = ({ users }) => {
       <div className="d-flex justify-content-between">
         <h3>Users</h3>
         <div className="mt-3">
-          <Link to="/user-map" className="user_link">Map View</Link>
+          <Link to="/users-location" className="user_link">Map View</Link>
         </div>
       </div>
       {users.length > 0
