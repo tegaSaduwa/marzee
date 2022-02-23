@@ -12,9 +12,9 @@ const Users = ({ users }) => {
       </div>
       {users.length > 0
         ? users?.map((user) => {
-            return (<div className="card p-2 mb-1">
+            return (<div className="card p-2 mb-1"  key={user?.id}>
               <div className="d-flex justify-content-between">
-                <div key={user?.id}>
+                <div>
                   <h5>{user?.name}</h5>
                   <small>{user.email}</small>
                   <small>{user.phone}</small>
