@@ -16,7 +16,7 @@ const User = () => {
 
       const user = res.data;
       setUser(user);
-    };
+  };
     getUser();
   }, [params]);
   return (

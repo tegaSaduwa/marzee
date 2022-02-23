@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { BASE_URL } from "./config";
 import axios from "axios";
-import MapComp from "./components/geo/AllUsersLocation";
+import AllUsersLocation from "./components/geo/AllUsersLocation";
 import Users from "./components/Users";
 import User from "./components/User";
 import "./App.css";
@@ -24,7 +24,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/users-location" element={<MapComp users={state} />} />
+          <Route path="/users-location" element={<AllUsersLocation users={state} />} />
           <Route path="/" element={<Users users={state} />} />
           <Route path="user/:id" element={<User />} />
         </Routes>
